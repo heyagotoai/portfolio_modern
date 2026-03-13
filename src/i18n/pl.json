@@ -51,21 +51,11 @@
         "size": "large"
       },
       {
-        "slug": "piktobajki",
-        "title": "PiktoBajki",
-        "subtitle": "Obrazkowe opowiadania AI",
-        "description": "Aplikacja do generowania interaktywnych historii obrazkowych. GPT-4o dla tekstu, DALL·E 3 dla obrazów, TTS dla głosu. System subskrypcji i zarządzanie zasobami użytkownika.",
-        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
-        "url": "https://piktobajki.streamlit.app/",
-        "image": "/images/piktobajkiAI.png",
-        "color": "#ff6b35",
-        "size": "large"
-      },
-      {
         "slug": "polmaraton",
         "title": "Półmaraton",
         "subtitle": "Predykcja czasu ML",
         "description": "Interaktywna aplikacja przewidująca czas półmaratonu. GPT-4o-mini rozpoznaje dane biegacza, model ML trenowany na 20 000+ uczestnikach z Wrocławia.",
+        "demo": "CatBoost Regressor przewiduje czas półmaratonu w sekundach na podstawie cech: wiek, płeć, czas na 5 km.",
         "tags": ["CatBoost", "PyCaret", "OpenAI", "Langfuse", "Docker"],
         "url": "https://polmaraton.streamlit.app/",
         "image": "/images/maraton.png",
@@ -77,11 +67,23 @@
         "title": "Audionotatki",
         "subtitle": "Voice notes + AI search",
         "description": "Nagrywanie notatek głosowych z automatyczną transkrypcją (Whisper). Semantyczne wyszukiwanie przez wektorową bazę Qdrant. Wielojęzyczna.",
+        "demo": "Login: test / Hasło: test — w bazie znajdziesz przykładowe notatki z przepisami kulinarnymi.",
         "tags": ["Whisper", "Qdrant", "Embeddings", "Streamlit"],
         "url": "https://nagraj.streamlit.app/",
         "image": "/images/audioPL.png",
         "color": "#8b5cf6",
         "size": "medium"
+      },
+      {
+        "slug": "piktobajki",
+        "title": "PiktoBajki",
+        "subtitle": "Obrazkowe opowiadania AI",
+        "description": "Aplikacja do generowania interaktywnych historii obrazkowych. GPT-4o dla tekstu, DALL·E 3 dla obrazów, TTS dla głosu. System subskrypcji i zarządzanie zasobami użytkownika.",
+        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
+        "url": "https://piktobajki.streamlit.app/",
+        "image": "/images/piktobajkiAI.png",
+        "color": "#ff6b35",
+        "size": "large"
       },
       {
         "slug": "friends",

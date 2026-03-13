@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index, style = {} }) {
   }
 
   return (
-    <div style={{ perspective: '600px', ...style }}>
+    <div style={{ perspective: '600px', ...style }} className="h-full">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -46,7 +46,7 @@ export default function ProjectCard({ project, index, style = {} }) {
               `${x}px ${y}px 40px rgba(0,0,0,0.6), 0 2px 0 rgba(255,255,255,0.06) inset, 0 -2px 0 rgba(0,255,136,0.15) inset, ${x * 0.4}px ${y * 0.4}px 0px 1px rgba(0,255,136,0.08)`
           )
         }}
-        className="glass-card overflow-hidden cursor-pointer group relative"
+        className="glass-card overflow-hidden cursor-pointer group relative h-full flex flex-col"
       >
         {/* Shine overlay */}
         <motion.div
@@ -83,22 +83,28 @@ export default function ProjectCard({ project, index, style = {} }) {
         </div>
 
         {/* Content */}
-        <div className="p-5" style={{ transform: 'translateZ(30px)' }}>
+        <div className="p-5 flex flex-col flex-1" style={{ transform: 'translateZ(30px)' }}>
           <p className="text-brand-gray text-[10px] font-mono tracking-widest uppercase mb-1">{project.subtitle}</p>
           <h3 className="text-white font-bold text-xl tracking-wide mb-2">{project.title}</h3>
           <p className="text-brand-gray text-sm leading-relaxed mb-4 line-clamp-3">{project.description}</p>
 
-          <div className="flex flex-wrap gap-1.5 mb-5">
+          <div className="flex flex-wrap gap-1.5 mb-3">
             {project.tags.map((tag) => (
               <span key={tag} className="tag">{tag}</span>
             ))}
           </div>
 
+          {project.demo && (
+            <div className="mb-4 px-3 py-2 rounded-lg border border-brand-green/20 bg-brand-green/5 text-[11px] font-mono text-brand-green/80 leading-relaxed">
+              {project.demo}
+            </div>
+          )}
+
           <a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-brand-green font-mono text-xs tracking-widest uppercase hover:gap-3 transition-all duration-200"
+            className="mt-auto inline-flex items-center gap-2 text-brand-green font-mono text-xs tracking-widest uppercase hover:gap-3 transition-all duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             Open app

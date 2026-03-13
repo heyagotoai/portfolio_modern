@@ -51,21 +51,11 @@
         "size": "large"
       },
       {
-        "slug": "piktobajki",
-        "title": "PiktoBajki",
-        "subtitle": "AI Picture Stories",
-        "description": "App for generating interactive picture stories. GPT-4o for text, DALL·E 3 for images, TTS for voice. Subscription system and user resource management.",
-        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
-        "url": "https://piktobajki.streamlit.app/",
-        "image": "/images/piktobajkiAI.png",
-        "color": "#ff6b35",
-        "size": "large"
-      },
-      {
         "slug": "polmaraton",
         "title": "Half Marathon",
         "subtitle": "ML Time Prediction",
         "description": "Interactive app predicting half-marathon finish time. GPT-4o-mini recognizes runner data, ML model trained on 20 000+ Wrocław participants.",
+        "demo": "CatBoost Regressor predicts finish time in seconds using age, gender, and 5km time as input features.",
         "tags": ["CatBoost", "PyCaret", "OpenAI", "Langfuse", "Docker"],
         "url": "https://polmaraton.streamlit.app/",
         "image": "/images/maraton.png",
@@ -77,11 +67,23 @@
         "title": "Audio Notes",
         "subtitle": "Voice notes + AI search",
         "description": "Voice note recording with automatic transcription (Whisper). Semantic search via Qdrant vector database. Multilingual support.",
+        "demo": "Login: test / Password: test — sample recipe notes are already in the database.",
         "tags": ["Whisper", "Qdrant", "Embeddings", "Streamlit"],
         "url": "https://nagraj.streamlit.app/",
         "image": "/images/audioPL.png",
         "color": "#8b5cf6",
         "size": "medium"
+      },
+      {
+        "slug": "piktobajki",
+        "title": "PiktoBajki",
+        "subtitle": "AI Picture Stories",
+        "description": "App for generating interactive picture stories. GPT-4o for text, DALL·E 3 for images, TTS for voice. Subscription system and user resource management.",
+        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
+        "url": "https://piktobajki.streamlit.app/",
+        "image": "/images/piktobajkiAI.png",
+        "color": "#ff6b35",
+        "size": "large"
       },
       {
         "slug": "friends",

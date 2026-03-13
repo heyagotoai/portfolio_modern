@@ -6,14 +6,10 @@ export default function ProjectsGrid() {
   const { t } = useTranslation()
   const projects = t('projects.items', { returnObjects: true })
 
-  // Asymmetric masonry layout classes — alternating sizes for visual variety
-  const gridClasses = [
-    'col-span-2 lg:col-span-2',  // large: 2 cols
-    'col-span-2 lg:col-span-1',  // medium: 1 col
-    'col-span-2 lg:col-span-1',  // medium: 1 col
-    'col-span-2 lg:col-span-1',  // small: 1 col
-    'col-span-2 lg:col-span-1',  // small: 1 col
-  ]
+  const getColClass = (size) => {
+    if (size === 'large') return 'col-span-2'
+    return 'col-span-2 lg:col-span-1'
+  }
 
   return (
     <section id="projects" className="relative py-24 px-8 lg:px-16 dot-grid">
@@ -38,7 +34,7 @@ export default function ProjectsGrid() {
         {/* Grid */}
         <div className="grid grid-cols-2 gap-6">
           {projects.map((project, i) => (
-            <div key={project.slug} className={gridClasses[i] || 'col-span-2 lg:col-span-1'}>
+            <div key={project.slug} className={`${getColClass(project.size)} h-full`}>
               <ProjectCard project={project} index={i} />
             </div>
           ))}
