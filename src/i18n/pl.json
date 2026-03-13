@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "eda": "Analizy",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Cześć, jestem",
+    "name": "Marcin Szczęsny",
+    "roles": ["Data Scientist", "AI Developer", "ML Engineer", "Tech Lead"],
+    "bio": [
+      "20+ lat w sprzedaży i budowaniu relacji biznesowych — łączę handlową intuicję z umiejętnością podejmowania decyzji opartych na analizie danych.",
+      "Od 2024 r. aktywnie rozwijam się w Data Science i AI. Członek elitarnej grupy Masterclass, gdzie współtworzę innowacyjne startupy z obszaru ML i sztucznej inteligencji.",
+      "Od VIII 2025 Tech Lead w Career Guide — odpowiadam za architekturę platformy, prowadzę Code Review i koordynuję pracę 5 zespołów (20+ osób)."
+    ],
+    "cta_projects": "Zobacz projekty",
+    "cta_contact": "Kontakt",
+    "stats": [
+      { "value": "20+", "label": "lat w biznesie" },
+      { "value": "2+", "label": "lat doświadczenia AI/ML" },
+      { "value": "3", "label": "języki programowania" },
+      { "value": "n8n", "label": "systemy agentowe" }
+    ]
+  },
+  "skills": {
+    "title": "Umiejętności",
+    "categories": [
+      { "name": "Języki", "items": ["Python", "TypeScript", "JavaScript"] },
+      { "name": "Frameworks", "items": ["Streamlit", "React", "React Native", "FastAPI", "Expo"] },
+      { "name": "AI / ML", "items": ["OpenAI", "Ollama", "PyCaret", "Scikit-learn", "CatBoost", "Matplotlib", "Seaborn"] },
+      { "name": "Bazy danych", "items": ["PostgreSQL", "Supabase", "Qdrant", "Redis"] },
+      { "name": "Cloud & DevOps", "items": ["Docker", "Digital Ocean", "GCP", "AWS S3", "Vercel", "Supabase Storage"] },
+      { "name": "Narzędzia", "items": ["MCP", "GitHub", "Pandas", "NumPy", "Plotly", "Langfuse", "N8N"] },
+      { "name": "Leadership", "items": ["Zarządzanie zespołem", "Komunikacja techniczna", "Rozwiązywanie problemów", "Krytyczne myślenie", "Zarządzanie czasem", "Adaptacja technologiczna"] }
+    ]
+  },
+  "projects": {
+    "title": "Projekty",
+    "subtitle": "Aplikacje zbudowane z pasją do AI i danych",
+    "items": [
+      {
+        "slug": "careerguide",
+        "title": "Career Guide",
+        "subtitle": "Platforma rozwoju kariery",
+        "description": "Platforma pomagająca użytkownikom w rozwoju kariery. Spersonalizowane testy osobowości i kompetencji, inteligentny system dopasowywania profilu zawodowego oraz kreator CV.",
+        "tags": ["FastAPI", "React", "TypeScript", "PostgreSQL", "Docker", "Supabase"],
+        "url": "https://careerguide.pl",
+        "image": "/images/careerguide.png",
+        "color": "#6366f1",
+        "size": "large"
+      },
+      {
+        "slug": "piktobajki",
+        "title": "PiktoBajki",
+        "subtitle": "Obrazkowe opowiadania AI",
+        "description": "Aplikacja do generowania interaktywnych historii obrazkowych. GPT-4o dla tekstu, DALL·E 3 dla obrazów, TTS dla głosu. System subskrypcji i zarządzanie zasobami użytkownika.",
+        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
+        "url": "https://piktobajki.streamlit.app/",
+        "image": "/images/piktobajkiAI.png",
+        "color": "#ff6b35",
+        "size": "large"
+      },
+      {
+        "slug": "polmaraton",
+        "title": "Półmaraton",
+        "subtitle": "Predykcja czasu ML",
+        "description": "Interaktywna aplikacja przewidująca czas półmaratonu. GPT-4o-mini rozpoznaje dane biegacza, model ML trenowany na 20 000+ uczestnikach z Wrocławia.",
+        "tags": ["CatBoost", "PyCaret", "OpenAI", "Langfuse", "Docker"],
+        "url": "https://polmaraton.streamlit.app/",
+        "image": "/images/maraton.png",
+        "color": "#3b82f6",
+        "size": "medium"
+      },
+      {
+        "slug": "audionotatki",
+        "title": "Audionotatki",
+        "subtitle": "Voice notes + AI search",
+        "description": "Nagrywanie notatek głosowych z automatyczną transkrypcją (Whisper). Semantyczne wyszukiwanie przez wektorową bazę Qdrant. Wielojęzyczna.",
+        "tags": ["Whisper", "Qdrant", "Embeddings", "Streamlit"],
+        "url": "https://nagraj.streamlit.app/",
+        "image": "/images/audioPL.png",
+        "color": "#8b5cf6",
+        "size": "medium"
+      },
+      {
+        "slug": "friends",
+        "title": "Find Friends",
+        "subtitle": "EDA + Clustering",
+        "description": "Narzędzie EDA do znajdowania osób o podobnych zainteresowaniach. Clustering PyCaret identyfikuje grupy użytkowników na podstawie ankiety.",
+        "tags": ["PyCaret", "Plotly", "Clustering", "Pandas"],
+        "url": "https://friendsappfind.streamlit.app/",
+        "image": "/images/logo.png",
+        "color": "#10b981",
+        "size": "small"
+      },
+      {
+        "slug": "zestawienia",
+        "title": "Zestawienia",
+        "subtitle": "Analiza sprzedaży",
+        "description": "Aplikacja do analizy sprzedaży z interaktywnymi wykresami Plotly. Parsuje niestandardowe pliki raportów, porównuje okresy, wizualizuje zmiany.",
+        "tags": ["Pandas", "NumPy", "Plotly", "Supabase"],
+        "url": "https://zestawienia.streamlit.app/",
+        "image": "/images/zest.png",
+        "color": "#f59e0b",
+        "size": "small"
+      }
+    ]
+  },
+  "eda": {
+    "title": "Analizy EDA",
+    "subtitle": "Eksploracja danych w Jupyter",
+    "items": [
+      {
+        "slug": "iris",
+        "title": "Iris Dataset",
+        "description": "Klasyczna analiza zbioru Iris — wizualizacje, statystyki opisowe, klasyfikacja.",
+        "tags": ["Jupyter", "Pandas", "Plotly", "Scikit-learn"],
+        "notebook_url": "/iris/iris.ipynb",
+        "image": "/images/irysy.png"
+      },
+      {
+        "slug": "titanic",
+        "title": "Titanic Survival",
+        "description": "Analiza przeżywalności pasażerów Titanica. EDA, feature engineering, modele ML.",
+        "tags": ["Jupyter", "Pandas", "CatBoost", "Plotly"],
+        "notebook_url": "/titanic/titanic.ipynb",
+        "image": "/images/titanic.png"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Porozmawiajmy o projekcie",
+    "availability": "Aktywnie szukam:",
+    "availability_items": [
+      "Pracy stałej w obszarze Data Science / AI",
+      "Projektów freelance ML / AI",
+      "Współpracy przy innowacyjnych rozwiązaniach"
+    ],
+    "email": "heya@wp.pl",
+    "github": "https://github.com/heyagotoai",
+    "linkedin": "https://www.linkedin.com/in/marcin-szczesny-ai/",
+    "cta": "Napisz do mnie"
+  },
+  "footer": {
+    "built_with": "Zbudowane z",
+    "and": "i",
+    "rights": "Marcin Szczęsny. Wszelkie prawa zastrzeżone."
+  }
+}

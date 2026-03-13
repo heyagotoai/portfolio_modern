@@ -1,0 +1,151 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "eda": "Analyses",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Marcin Szczęsny",
+    "roles": ["Data Scientist", "AI Developer", "ML Engineer", "Tech Lead"],
+    "bio": [
+      "20+ years in sales and business relationship management — combining commercial intuition with data-driven decision making.",
+      "Since 2024 actively growing in Data Science & AI. Member of the elite Masterclass group, co-creating innovative ML and AI startups.",
+      "Tech Lead at Career Guide since Aug 2025 — responsible for platform architecture, Code Review, and coordinating 5 teams (20+ people)."
+    ],
+    "cta_projects": "See projects",
+    "cta_contact": "Contact",
+    "stats": [
+      { "value": "20+", "label": "years in business" },
+      { "value": "2+", "label": "years of AI/ML experience" },
+      { "value": "3", "label": "programming languages" },
+      { "value": "n8n", "label": "agentic systems" }
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "categories": [
+      { "name": "Languages", "items": ["Python", "TypeScript", "JavaScript"] },
+      { "name": "Frameworks", "items": ["Streamlit", "React", "React Native", "FastAPI", "Expo"] },
+      { "name": "AI / ML", "items": ["OpenAI", "Ollama", "PyCaret", "Scikit-learn", "CatBoost", "Matplotlib", "Seaborn"] },
+      { "name": "Databases", "items": ["PostgreSQL", "Supabase", "Qdrant", "Redis"] },
+      { "name": "Cloud & DevOps", "items": ["Docker", "Digital Ocean", "GCP", "AWS S3", "Vercel", "Supabase Storage"] },
+      { "name": "Tools", "items": ["MCP", "GitHub", "Pandas", "NumPy", "Plotly", "Langfuse", "N8N"] },
+      { "name": "Leadership", "items": ["Team Management", "Technical Communication", "Problem Solving", "Critical Thinking", "Time Management", "Tech Adaptability"] }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Applications built with passion for AI and data",
+    "items": [
+      {
+        "slug": "careerguide",
+        "title": "Career Guide",
+        "subtitle": "Career Development Platform",
+        "description": "Platform helping users develop their careers. Personalised personality and skills tests, intelligent job profile matching system, and a CV creator.",
+        "tags": ["FastAPI", "React", "TypeScript", "PostgreSQL", "Docker", "Supabase"],
+        "url": "https://careerguide.pl",
+        "image": "/images/careerguide.png",
+        "color": "#6366f1",
+        "size": "large"
+      },
+      {
+        "slug": "piktobajki",
+        "title": "PiktoBajki",
+        "subtitle": "AI Picture Stories",
+        "description": "App for generating interactive picture stories. GPT-4o for text, DALL·E 3 for images, TTS for voice. Subscription system and user resource management.",
+        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
+        "url": "https://piktobajki.streamlit.app/",
+        "image": "/images/piktobajkiAI.png",
+        "color": "#ff6b35",
+        "size": "large"
+      },
+      {
+        "slug": "polmaraton",
+        "title": "Half Marathon",
+        "subtitle": "ML Time Prediction",
+        "description": "Interactive app predicting half-marathon finish time. GPT-4o-mini recognizes runner data, ML model trained on 20 000+ Wrocław participants.",
+        "tags": ["CatBoost", "PyCaret", "OpenAI", "Langfuse", "Docker"],
+        "url": "https://polmaraton.streamlit.app/",
+        "image": "/images/maraton.png",
+        "color": "#3b82f6",
+        "size": "medium"
+      },
+      {
+        "slug": "audionotatki",
+        "title": "Audio Notes",
+        "subtitle": "Voice notes + AI search",
+        "description": "Voice note recording with automatic transcription (Whisper). Semantic search via Qdrant vector database. Multilingual support.",
+        "tags": ["Whisper", "Qdrant", "Embeddings", "Streamlit"],
+        "url": "https://nagraj.streamlit.app/",
+        "image": "/images/audioPL.png",
+        "color": "#8b5cf6",
+        "size": "medium"
+      },
+      {
+        "slug": "friends",
+        "title": "Find Friends",
+        "subtitle": "EDA + Clustering",
+        "description": "EDA tool for finding people with similar interests. PyCaret clustering identifies user groups based on survey responses.",
+        "tags": ["PyCaret", "Plotly", "Clustering", "Pandas"],
+        "url": "https://friendsappfind.streamlit.app/",
+        "image": "/images/logo.png",
+        "color": "#10b981",
+        "size": "small"
+      },
+      {
+        "slug": "zestawienia",
+        "title": "Sales Reports",
+        "subtitle": "Sales Analysis",
+        "description": "Sales analysis app with interactive Plotly charts. Parses custom report files, compares periods, visualizes changes in revenue and margin.",
+        "tags": ["Pandas", "NumPy", "Plotly", "Supabase"],
+        "url": "https://zestawienia.streamlit.app/",
+        "image": "/images/zest.png",
+        "color": "#f59e0b",
+        "size": "small"
+      }
+    ]
+  },
+  "eda": {
+    "title": "EDA Analyses",
+    "subtitle": "Data exploration in Jupyter",
+    "items": [
+      {
+        "slug": "iris",
+        "title": "Iris Dataset",
+        "description": "Classic Iris dataset analysis — visualizations, descriptive statistics, classification.",
+        "tags": ["Jupyter", "Pandas", "Plotly", "Scikit-learn"],
+        "notebook_url": "/iris/iris.ipynb",
+        "image": "/images/irysy.png"
+      },
+      {
+        "slug": "titanic",
+        "title": "Titanic Survival",
+        "description": "Analysis of Titanic passenger survival. EDA, feature engineering, ML models.",
+        "tags": ["Jupyter", "Pandas", "CatBoost", "Plotly"],
+        "notebook_url": "/titanic/titanic.ipynb",
+        "image": "/images/titanic.png"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk about a project",
+    "availability": "Actively looking for:",
+    "availability_items": [
+      "Permanent position in Data Science / AI",
+      "Freelance ML / AI projects",
+      "Collaboration on innovative solutions"
+    ],
+    "email": "heya@wp.pl",
+    "github": "https://github.com/heyagotoai",
+    "linkedin": "https://www.linkedin.com/in/marcin-szczesny-ai/",
+    "cta": "Send a message"
+  },
+  "footer": {
+    "built_with": "Built with",
+    "and": "and",
+    "rights": "Marcin Szczęsny. All rights reserved."
+  }
+}
