@@ -19,7 +19,7 @@
     "stats": [
       { "value": "20+", "label": "lat w biznesie" },
       { "value": "2+", "label": "lat w AI/ML/Data Science" },
-      { "value": "n8n", "label": "systemy agentowe" }
+      { "value": "1+", "label": "systemy agentowe N8N" }
     ]
   },
   "skills": {
