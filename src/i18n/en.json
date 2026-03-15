@@ -18,8 +18,7 @@
     "cta_contact": "Contact",
     "stats": [
       { "value": "20+", "label": "years in business" },
-      { "value": "2+", "label": "years of AI/ML experience" },
-      { "value": "3", "label": "programming languages" },
+      { "value": "2+", "label": "years in AI/ML/Data Science" },
       { "value": "n8n", "label": "agentic systems" }
     ]
   },
