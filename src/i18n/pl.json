@@ -26,7 +26,7 @@
   "skills": {
     "title": "Umiejętności",
     "categories": [
-      { "name": "Języki", "items": ["Python", "TypeScript", "JavaScript"] },
+      { "name": "Języki", "items": ["Python", "SQL", "TypeScript", "JavaScript"] },
       { "name": "Frameworks", "items": ["Streamlit", "React", "React Native", "FastAPI", "Expo"] },
       { "name": "AI / ML", "items": ["OpenAI", "Ollama", "PyCaret", "Scikit-learn", "CatBoost", "Matplotlib", "Seaborn"] },
       { "name": "Bazy danych", "items": ["PostgreSQL", "Supabase", "Qdrant", "Redis"] },

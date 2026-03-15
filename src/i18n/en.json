@@ -26,7 +26,7 @@
   "skills": {
     "title": "Skills",
     "categories": [
-      { "name": "Languages", "items": ["Python", "TypeScript", "JavaScript"] },
+      { "name": "Languages", "items": ["Python", "SQL", "TypeScript", "JavaScript"] },
       { "name": "Frameworks", "items": ["Streamlit", "React", "React Native", "FastAPI", "Expo"] },
       { "name": "AI / ML", "items": ["OpenAI", "Ollama", "PyCaret", "Scikit-learn", "CatBoost", "Matplotlib", "Seaborn"] },
       { "name": "Databases", "items": ["PostgreSQL", "Supabase", "Qdrant", "Redis"] },
