@@ -39,6 +39,18 @@
     "subtitle": "Applications built with passion for AI and data",
     "items": [
       {
+        "slug": "wspolnik-demo",
+        "title": "Wspólnik",
+        "subtitle": "Housing community portal",
+        "description": "App for a housing community: public site with news, resident dashboard (finances, announcements, voting, documents), and a full admin back office (charges, imports, resolutions). Full navigation in demo mode with mock data.",
+        "demo": "Demo mode: full UI with mocks — no writes to a real database.",
+        "tags": ["React", "TypeScript", "Vite", "Tailwind", "Supabase", "FastAPI"],
+        "url": "https://wspolnik-demo.vercel.app/",
+        "image": "/images/wspolnik.png",
+        "color": "#6B8F71",
+        "size": "large"
+      },
+      {
         "slug": "careerguide",
         "title": "Career Guide",
         "subtitle": "Career Development Platform",

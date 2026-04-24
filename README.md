@@ -1,16 +1,22 @@
-# React + Vite
+# Portfolio (modern)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jednostronicowe portfolio (React + Vite + Tailwind). Treści wielojęzyczne (PL/EN) przez i18next.
 
-Currently, two official plugins are available:
+## Uruchomienie
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Build produkcyjny: `npm run build`, podgląd builda: `npm run preview`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Edycja projektów i sekcji
 
-## Expanding the ESLint configuration
+- **Karty aplikacji (grid projektów):** `src/i18n/pl.json` oraz `src/i18n/en.json`, klucz `projects.items`. Każdy wpis może mieć m.in. `slug`, `title`, `subtitle`, `description`, `tags`, `url`, `image` (ścieżka pod `public/`, np. `/images/nazwa.png`), `color`, `size` (`large` = pełna szerokość siatki, inne wartości = węższy kafel na dużych ekranach), opcjonalnie `demo`.
+- **Sekcja EDA / notebooki:** ten sam plik, klucz `eda.items` (`notebook_url` wskazuje na pliki w `public/`).
+- Grafiki statyczne: katalog `public/images/`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Stack
+
+React 19, Vite 8, Tailwind CSS 3, Framer Motion, react-i18next.
