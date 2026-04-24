@@ -42,7 +42,7 @@
         "slug": "wspolnik-demo",
         "title": "Wspólnik",
         "subtitle": "Housing community portal",
-        "description": "App for a housing community: public site with news, resident dashboard (finances, announcements, voting, documents), and a full admin back office (charges, imports, resolutions). Full navigation in demo mode with mock data.",
+        "description": "App for a housing community: public site with news, resident dashboard (finances, announcements, voting, documents), and a full admin back office (charges, imports, resolutions). Automation for generating charges and notifications — including PDF notices, e-mail, and voting reminders. Full navigation in demo mode with mock data.",
         "demo": "Demo mode: full UI with mocks — no writes to a real database.",
         "tags": ["React", "TypeScript", "Vite", "Tailwind", "Supabase", "FastAPI"],
         "url": "https://wspolnik-demo.vercel.app/",

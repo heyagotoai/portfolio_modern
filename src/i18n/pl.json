@@ -42,7 +42,7 @@
         "slug": "wspolnik-demo",
         "title": "Wspólnik",
         "subtitle": "Portal wspólnoty mieszkaniowej",
-        "description": "Aplikacja dla wspólnoty: strona publiczna z aktualnościami, panel mieszkańca (finanse, ogłoszenia, głosowania, dokumenty) oraz rozbudowany panel administratora (naliczenia, importy, uchwały). Pełna nawigacja w trybie demonstracyjnym z danymi mock.",
+        "description": "Aplikacja dla wspólnoty: strona publiczna z aktualnościami, panel mieszkańca (finanse, ogłoszenia, głosowania, dokumenty) oraz rozbudowany panel administratora (naliczenia, importy, uchwały). Automatyzacja generowania naliczeń oraz powiadomień — m.in. zawiadomienia PDF i e-mail, przypomnienia o głosowaniach. Pełna nawigacja w trybie demonstracyjnym z danymi mock.",
         "demo": "Tryb demonstracyjny: pełny interfejs z mockami — bez zapisu do prawdziwej bazy.",
         "tags": ["React", "TypeScript", "Vite", "Tailwind", "Supabase", "FastAPI"],
         "url": "https://wspolnik-demo.vercel.app/",
