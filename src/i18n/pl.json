@@ -3,6 +3,7 @@
     "about": "O mnie",
     "projects": "Projekty",
     "eda": "Analizy",
+    "certificates": "Certyfikaty",
     "contact": "Kontakt"
   },
   "hero": {
@@ -139,6 +140,55 @@
         "tags": ["Jupyter", "Pandas", "CatBoost", "Plotly"],
         "notebook_url": "/titanic/titanic.ipynb",
         "image": "/images/titanic.png"
+      }
+    ]
+  },
+  "certificates": {
+    "title": "CERTYFIKATY",
+    "subtitle": "Ukończone szkolenia i kursy",
+    "open": "Otwórz",
+    "download": "Pobierz",
+    "verify": "Zweryfikuj",
+    "items": [
+      {
+        "slug": "masterclass",
+        "title": "Od Zera Do AI – Masterclass",
+        "issuer": "imprv.ai",
+        "date": "2026-05-11",
+        "date_display": "Maj 2026",
+        "description": "Zaawansowany, kilkumiesięczny program rozwojowy. Nauczyłem się tworzyć i prowadzić zaawansowane projekty oraz produkty oparte o AI — od koncepcji, przez architekturę, po wdrożenie.",
+        "tags": ["AI Foundations", "Advanced AI", "Product Development", "Project Leadership", "Masterclass"],
+        "pdf_url": "/certificates/masterclass.pdf",
+        "verify_url": "https://app.imprv.ai/verify/vrf_IRO03ZmHvrb"
+      },
+      {
+        "slug": "produkty-ai",
+        "title": "Tworzenie i projektowanie produktów AI",
+        "issuer": "imprv.ai",
+        "date": "2026-05-07",
+        "date_display": "Maj 2026",
+        "tags": ["Product", "UX", "AI Design"],
+        "pdf_url": "/certificates/tworzenie_i_projektowanie_AI.pdf",
+        "verify_url": "https://app.imprv.ai/verify/vrf_sqFMIQs2P1q"
+      },
+      {
+        "slug": "ai-dla-ceo",
+        "title": "AI dla CEO: Zrozum AI, zanim AI zmieni Twój rynek",
+        "issuer": "imprv.ai",
+        "date": "2026-03-22",
+        "date_display": "Marzec 2026",
+        "tags": ["AI Strategy", "Leadership", "Business"],
+        "pdf_url": "/certificates/AI_dla_CEO.pdf",
+        "verify_url": "https://app.imprv.ai/verify/vrf_ue5thrjd81D"
+      },
+      {
+        "slug": "data-scientist",
+        "title": "Pracuj w AI: Zostań Data Scientist od Zera",
+        "issuer": "gotoit.pl",
+        "date": "2025-08-25",
+        "date_display": "Sierpień 2025",
+        "tags": ["Python", "Pandas", "Scikit-learn", "ML", "Data Science"],
+        "pdf_url": "/certificates/data-scientist.pdf"
       }
     ]
   },

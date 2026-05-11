@@ -103,6 +103,33 @@
   }
 }
 
+/* Mobile-only auto-shine sweep — runs on touch devices that lack hover/tilt */
+@media (hover: none) {
+  .shine-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(0, 255, 136, 0.08) 47%,
+      rgba(255, 255, 255, 0.14) 50%,
+      rgba(0, 255, 136, 0.08) 53%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    animation: shineSweep 8s linear infinite;
+    animation-delay: var(--shine-delay, 0s);
+  }
+  @keyframes shineSweep {
+    0% { transform: translateX(-100%); }
+    10% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+  }
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;

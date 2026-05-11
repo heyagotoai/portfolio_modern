@@ -1,9 +1,20 @@
 import { useTranslation } from 'react-i18next'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { useRef, useState } from 'react'
-import NotebookViewer from './NotebookViewer'
+import PDFViewer from './PDFViewer'
 
-function EDACard({ item, index, onOpen }) {
+function MedalGraphic() {
+  return (
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" className="text-brand-green">
+      <path d="M20 4l-6 14M44 4l6 14" opacity="0.6" />
+      <circle cx="32" cy="36" r="16" />
+      <circle cx="32" cy="36" r="10" opacity="0.5" />
+      <path d="M26 34l4 4 8-8" />
+    </svg>
+  )
+}
+
+function CertificateCard({ item, index, labels, onOpen }) {
   const cardRef = useRef(null)
 
   const mouseX = useMotionValue(0)
@@ -64,22 +75,19 @@ function EDACard({ item, index, onOpen }) {
         {/* Edge highlight (top) */}
         <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-10" />
 
-        {/* Image */}
-        <div className="h-28 bg-black/40 relative overflow-hidden flex items-center justify-center">
-          {item.image && (
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-full object-contain p-4 opacity-50 group-hover:opacity-70 transition-opacity"
-              onError={(e) => { e.target.style.display = 'none' }}
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        {/* Visual header (medal + issuer) */}
+        <div className="h-28 bg-zinc-900/60 relative overflow-hidden flex flex-col items-center justify-center gap-1">
+          <p className="text-brand-gray/70 font-mono text-[10px] tracking-widest uppercase">{item.issuer}</p>
+          <MedalGraphic />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         </div>
 
         <div className="p-6" style={{ transform: 'translateZ(30px)' }}>
-          <h3 className="text-white font-bold text-xl mb-2">{item.title}</h3>
-          <p className="text-brand-gray text-sm leading-relaxed mb-4">{item.description}</p>
+          <h3 className="text-white font-bold text-xl mb-2 leading-tight">{item.title}</h3>
+          <p className="text-brand-gray text-xs font-mono tracking-wide mb-3">{item.date_display}</p>
+          {item.description && (
+            <p className="text-brand-gray text-sm leading-relaxed mb-4">{item.description}</p>
+          )}
 
           <div className="flex flex-wrap gap-1.5 mb-5">
             {item.tags.map((tag) => (
@@ -87,26 +95,39 @@ function EDACard({ item, index, onOpen }) {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center flex-wrap gap-4">
             <button
               onClick={onOpen}
               className="inline-flex items-center gap-2 text-brand-green font-mono text-xs tracking-widest uppercase hover:gap-3 transition-all duration-200"
             >
-              Otwórz
+              {labels.open}
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <a
-              href={item.notebook_url}
+              href={item.pdf_url}
               download
               className="inline-flex items-center gap-2 text-brand-gray font-mono text-xs tracking-widest uppercase hover:text-white transition-colors duration-200"
             >
-              Pobierz
+              {labels.download}
               <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M7 3v8M3 9l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
+            {item.verify_url && (
+              <a
+                href={item.verify_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-brand-gray/70 font-mono text-[11px] tracking-widest uppercase hover:text-brand-green transition-colors duration-200"
+              >
+                {labels.verify}
+                <svg width="11" height="11" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 3h5v5M8 3L3 8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            )}
           </div>
         </div>
       </motion.div>
@@ -114,13 +135,19 @@ function EDACard({ item, index, onOpen }) {
   )
 }
 
-export default function EDASection() {
+export default function CertificatesSection() {
   const { t } = useTranslation()
-  const items = t('eda.items', { returnObjects: true })
-  const [openNotebook, setOpenNotebook] = useState(null)
+  const items = t('certificates.items', { returnObjects: true })
+  const [openCert, setOpenCert] = useState(null)
+
+  const labels = {
+    open: t('certificates.open'),
+    download: t('certificates.download'),
+    verify: t('certificates.verify'),
+  }
 
   return (
-    <section id="eda" className="relative py-24 px-8 lg:px-16">
+    <section id="certificates" className="relative py-24 px-8 lg:px-16">
       <div className="absolute top-0 left-8 lg:left-16 right-8 lg:right-16 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="max-w-4xl mx-auto">
@@ -131,29 +158,31 @@ export default function EDASection() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <p className="section-label mb-4">{t('eda.title')}</p>
+          <p className="section-label mb-4">{t('certificates.title')}</p>
           <h2 className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            {t('eda.subtitle')}
+            {t('certificates.subtitle')}
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {items.map((item, i) => (
-            <EDACard
+            <CertificateCard
               key={item.slug}
               item={item}
               index={i}
-              onOpen={() => setOpenNotebook(item)}
+              labels={labels}
+              onOpen={() => setOpenCert(item)}
             />
           ))}
         </div>
       </div>
 
-      {openNotebook && (
-        <NotebookViewer
-          notebookUrl={openNotebook.notebook_url}
-          title={openNotebook.title}
-          onClose={() => setOpenNotebook(null)}
+      {openCert && (
+        <PDFViewer
+          pdfUrl={openCert.pdf_url}
+          title={openCert.title}
+          downloadLabel={labels.download}
+          onClose={() => setOpenCert(null)}
         />
       )}
     </section>

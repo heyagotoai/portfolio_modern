@@ -28,7 +28,7 @@ export default function ProjectCard({ project, index, style = {} }) {
   }
 
   return (
-    <div style={{ perspective: '600px', ...style }} className="h-full">
+    <div style={{ perspective: '600px', '--shine-delay': `${index % 8}s`, ...style }} className="h-full">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -46,7 +46,7 @@ export default function ProjectCard({ project, index, style = {} }) {
               `${x}px ${y}px 40px rgba(0,0,0,0.6), 0 2px 0 rgba(255,255,255,0.06) inset, 0 -2px 0 rgba(0,255,136,0.15) inset, ${x * 0.4}px ${y * 0.4}px 0px 1px rgba(0,255,136,0.08)`
           )
         }}
-        className="glass-card overflow-hidden cursor-pointer group relative h-full flex flex-col"
+        className="glass-card shine-sweep overflow-hidden cursor-pointer group relative h-full flex flex-col"
       >
         {/* Shine overlay */}
         <motion.div
