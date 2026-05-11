@@ -41,7 +41,7 @@ function CertificateCard({ item, index, labels, onOpen }) {
   }
 
   return (
-    <div style={{ perspective: '600px', '--shine-delay': `${index % 8}s` }}>
+    <div style={{ perspective: '600px', '--shine-delay': `${index % 8}s` }} className="h-full">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -59,7 +59,7 @@ function CertificateCard({ item, index, labels, onOpen }) {
               `${x}px ${y}px 40px rgba(0,0,0,0.6), 0 2px 0 rgba(255,255,255,0.06) inset, 0 -2px 0 rgba(0,255,136,0.15) inset, ${x * 0.4}px ${y * 0.4}px 0px 1px rgba(0,255,136,0.08)`
           )
         }}
-        className="glass-card shine-sweep overflow-hidden group cursor-default relative"
+        className="glass-card shine-sweep overflow-hidden group cursor-default relative h-full flex flex-col"
       >
         {/* Shine overlay */}
         <motion.div
@@ -82,7 +82,7 @@ function CertificateCard({ item, index, labels, onOpen }) {
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
         </div>
 
-        <div className="p-6" style={{ transform: 'translateZ(30px)' }}>
+        <div className="p-6 flex flex-col flex-1" style={{ transform: 'translateZ(30px)' }}>
           <h3 className="text-white font-bold text-xl mb-2 leading-tight">{item.title}</h3>
           <p className="text-brand-gray text-xs font-mono tracking-wide mb-3">{item.date_display}</p>
           {item.description && (
@@ -95,7 +95,7 @@ function CertificateCard({ item, index, labels, onOpen }) {
             ))}
           </div>
 
-          <div className="flex items-center flex-wrap gap-4">
+          <div className="mt-auto flex items-center flex-wrap gap-4">
             <button
               onClick={onOpen}
               className="inline-flex items-center gap-2 text-brand-green font-mono text-xs tracking-widest uppercase hover:gap-3 transition-all duration-200"
