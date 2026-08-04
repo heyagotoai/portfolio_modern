@@ -40,6 +40,18 @@
     "subtitle": "Aplikacje zbudowane z pasją do AI i danych",
     "items": [
       {
+        "slug": "ragain",
+        "title": "Ragain AI",
+        "subtitle": "Kartoteka klienta budowana głosem",
+        "description": "Mobilny asystent głosowy dla handlowca terenowego. Krótkie nagranie po wizycie staje się kartoteką klienta: dane, ustalenia trwałe (z pełną historią zmian, nic nie jest kasowane), notatki i zadania — a przed kolejną wizytą wraca jako briefing. Rozpoznawanie klienta, arkusz przeglądu zmian do zatwierdzenia, kartoteka dwupoziomowa (sieć nad punktem handlowym).",
+        "demo": "Tryb demonstracyjny bez kont i kluczy — przycisk „Uruchom przykład” pokazuje pełną pętlę: nagranie → delta kartoteki → zatwierdzenie → zapis.",
+        "tags": ["Next.js", "React", "OpenAI", "Supabase", "PostgreSQL", "Cloudflare Workers"],
+        "url": "https://ragain.heyagotoai.workers.dev",
+        "image": "/images/ragain.png",
+        "color": "#2dd4a7",
+        "size": "large"
+      },
+      {
         "slug": "wspolnik-demo",
         "title": "Wspólnik",
         "subtitle": "Portal wspólnoty mieszkaniowej",

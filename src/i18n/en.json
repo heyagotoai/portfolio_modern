@@ -40,6 +40,18 @@
     "subtitle": "Applications built with passion for AI and data",
     "items": [
       {
+        "slug": "ragain",
+        "title": "Ragain AI",
+        "subtitle": "Client dossier built by voice",
+        "description": "Mobile voice assistant for field sales reps. A short recording after a visit becomes a client dossier: data, durable agreements (with full change history — nothing is ever deleted), notes and tasks — returning as a briefing before the next visit. Client recognition, a delta review sheet for confirmation, two-level dossier (network above the outlet).",
+        "demo": "Demo mode without accounts or API keys — the \"Run example\" button walks through the full loop: recording → dossier delta → confirmation → save.",
+        "tags": ["Next.js", "React", "OpenAI", "Supabase", "PostgreSQL", "Cloudflare Workers"],
+        "url": "https://ragain.heyagotoai.workers.dev",
+        "image": "/images/ragain.png",
+        "color": "#2dd4a7",
+        "size": "large"
+      },
+      {
         "slug": "wspolnik-demo",
         "title": "Wspólnik",
         "subtitle": "Housing community portal",
