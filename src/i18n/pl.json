@@ -41,7 +41,7 @@
     "items": [
       {
         "slug": "ragain",
-        "title": "Ragain AI",
+        "title": "RagAIn",
         "subtitle": "Kartoteka klienta budowana głosem",
         "description": "Mobilny asystent głosowy dla handlowca terenowego. Krótkie nagranie po wizycie staje się kartoteką klienta: dane, ustalenia trwałe (z pełną historią zmian, nic nie jest kasowane), notatki i zadania — a przed kolejną wizytą wraca jako briefing. Rozpoznawanie klienta, arkusz przeglądu zmian do zatwierdzenia, kartoteka dwupoziomowa (sieć nad punktem handlowym).",
         "demo": "Tryb demonstracyjny bez kont i kluczy — przycisk „Uruchom przykład” pokazuje pełną pętlę: nagranie → delta kartoteki → zatwierdzenie → zapis.",

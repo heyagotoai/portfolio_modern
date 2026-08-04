@@ -41,7 +41,7 @@
     "items": [
       {
         "slug": "ragain",
-        "title": "Ragain AI",
+        "title": "RagAIn",
         "subtitle": "Client dossier built by voice",
         "description": "Mobile voice assistant for field sales reps. A short recording after a visit becomes a client dossier: data, durable agreements (with full change history — nothing is ever deleted), notes and tasks — returning as a briefing before the next visit. Client recognition, a delta review sheet for confirmation, two-level dossier (network above the outlet).",
         "demo": "Demo mode without accounts or API keys — the \"Run example\" button walks through the full loop: recording → dossier delta → confirmation → save.",
