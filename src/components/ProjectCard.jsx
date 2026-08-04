@@ -27,12 +27,18 @@ export default function ProjectCard({ project, index, style = {} }) {
     mouseY.set(0)
   }
 
+  const handleCardClick = (e) => {
+    if (e.target.closest('a')) return
+    window.open(project.url, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <div style={{ perspective: '600px', '--shine-delay': `${index % 8}s`, ...style }} className="h-full">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={handleCardClick}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
@@ -104,8 +110,7 @@ export default function ProjectCard({ project, index, style = {} }) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto inline-flex items-center gap-2 text-brand-green font-mono text-xs tracking-widest uppercase hover:gap-3 transition-all duration-200"
-            onClick={(e) => e.stopPropagation()}
+            className="mt-auto mx-auto inline-flex items-center gap-2 text-black bg-brand-green font-mono text-xs tracking-widest uppercase px-5 py-2.5 rounded-full hover:bg-brand-green/90 hover:gap-3 hover:scale-105 transition-all duration-200"
           >
             Open app
             <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">

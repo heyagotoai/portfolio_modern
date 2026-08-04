@@ -49,7 +49,7 @@
         "url": "https://ragain.heyagotoai.workers.dev",
         "image": "/images/ragain.png",
         "color": "#2dd4a7",
-        "size": "large"
+        "size": "medium"
       },
       {
         "slug": "wspolnik-demo",
@@ -61,7 +61,7 @@
         "url": "https://wspolnik-demo.vercel.app/",
         "image": "/images/wspolnik.png",
         "color": "#6B8F71",
-        "size": "large"
+        "size": "medium"
       },
       {
         "slug": "careerguide",
