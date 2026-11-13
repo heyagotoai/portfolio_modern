@@ -1,124 +1,62 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useEffect } from 'react'
+import { motion as Motion, useMotionTemplate, useMotionValue, useReducedMotion, useSpring } from 'framer-motion'
+import usePointerMotion from '../hooks/usePointerMotion'
 
-export default function ProjectCard({ project, index, style = {} }) {
-  const cardRef = useRef(null)
+export default function ProjectCard({ project, linked = true }) {
+  const { t } = useTranslation()
+  const enabled = usePointerMotion() && linked
+  const reduced = useReducedMotion()
+  const rotateX = useSpring(0, { stiffness: 180, damping: 26 })
+  const rotateY = useSpring(0, { stiffness: 180, damping: 26 })
+  const reflectionOpacity = useSpring(0, { stiffness: 180, damping: 26 })
+  const pointerX = useMotionValue(50)
+  const pointerY = useMotionValue(50)
+  const reflection = useMotionTemplate`radial-gradient(ellipse at ${pointerX}% ${pointerY}%, rgba(255, 255, 255, 0.08), transparent 65%)`
+  const reset = () => { rotateX.set(0); rotateY.set(0); reflectionOpacity.set(0) }
 
-  const mouseX = useMotionValue(0)
-  const mouseY = useMotionValue(0)
+  useEffect(() => {
+    if (!enabled) {
+      rotateX.jump(0)
+      rotateY.jump(0)
+      reflectionOpacity.jump(0)
+    }
+  }, [enabled, rotateX, rotateY, reflectionOpacity])
 
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [14, -14]), { stiffness: 180, damping: 18 })
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-14, 14]), { stiffness: 180, damping: 18 })
-  const shineX = useTransform(mouseX, [-0.5, 0.5], ['0%', '100%'])
-  const shineY = useTransform(mouseY, [-0.5, 0.5], ['0%', '100%'])
-  const shadowX = useTransform(mouseX, [-0.5, 0.5], [12, -12])
-  const shadowY = useTransform(mouseY, [-0.5, 0.5], [-12, 12])
-
-  const handleMouseMove = (e) => {
-    const rect = cardRef.current.getBoundingClientRect()
-    const x = (e.clientX - rect.left) / rect.width - 0.5
-    const y = (e.clientY - rect.top) / rect.height - 0.5
-    mouseX.set(x)
-    mouseY.set(y)
+  const move = (event) => {
+    if (!enabled || event.pointerType !== 'mouse') return
+    const rect = event.currentTarget.getBoundingClientRect()
+    const x = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width))
+    const y = Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height))
+    rotateX.set((0.5 - y) * 7)
+    rotateY.set((x - 0.5) * 7)
+    pointerX.set(x * 100)
+    pointerY.set(y * 100)
+    reflectionOpacity.set(1)
   }
-
-  const handleMouseLeave = () => {
-    mouseX.set(0)
-    mouseY.set(0)
-  }
-
-  const handleCardClick = (e) => {
-    if (e.target.closest('a')) return
-    window.open(project.url, '_blank', 'noopener,noreferrer')
-  }
-
-  return (
-    <div style={{ perspective: '600px', '--shine-delay': `${index % 8}s`, ...style }} className="h-full">
-      <motion.div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onClick={handleCardClick}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-60px' }}
-        transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
-        style={{
-          rotateX, rotateY,
-          transformStyle: 'preserve-3d',
-          boxShadow: useTransform(
-            [shadowX, shadowY],
-            ([x, y]) =>
-              `${x}px ${y}px 40px rgba(0,0,0,0.6), 0 2px 0 rgba(255,255,255,0.06) inset, 0 -2px 0 rgba(0,255,136,0.15) inset, ${x * 0.4}px ${y * 0.4}px 0px 1px rgba(0,255,136,0.08)`
-          )
-        }}
-        className="glass-card shine-sweep overflow-hidden cursor-pointer group relative h-full flex flex-col"
-      >
-        {/* Shine overlay */}
-        <motion.div
-          className="absolute inset-0 pointer-events-none z-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          style={{
-            background: useTransform(
-              [shineX, shineY],
-              ([x, y]) => `radial-gradient(circle at ${x} ${y}, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.04) 40%, transparent 65%)`
-            ),
-          }}
-        />
-
-        {/* Edge highlight (top) */}
-        <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-10" />
-
-        {/* Image */}
-        <div className="relative h-28 overflow-hidden bg-zinc-900/60 flex items-center justify-center">
-          {project.image ? (
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-contain p-4 opacity-85 group-hover:opacity-100 transition-opacity duration-300"
-              onError={(e) => { e.target.style.display = 'none' }}
-            />
-          ) : null}
-          <div
-            className="absolute inset-0 opacity-10 group-hover:opacity-25 transition-opacity duration-300"
-            style={{ background: `linear-gradient(135deg, ${project.color}60, transparent)` }}
-          />
-          <div
-            className="absolute top-3 right-3 w-2 h-2 rounded-full"
-            style={{ backgroundColor: project.color, boxShadow: `0 0 8px ${project.color}` }}
-          />
-        </div>
-
-        {/* Content */}
-        <div className="p-5 flex flex-col flex-1" style={{ transform: 'translateZ(30px)' }}>
-          <p className="text-brand-gray text-[10px] font-mono tracking-widest uppercase mb-1">{project.subtitle}</p>
-          <h3 className="text-white font-bold text-xl tracking-wide mb-2">{project.title}</h3>
-          <p className="text-brand-gray text-sm leading-relaxed mb-4 line-clamp-3">{project.description}</p>
-
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {project.tags.map((tag) => (
-              <span key={tag} className="tag">{tag}</span>
-            ))}
-          </div>
-
-          {project.demo && (
-            <div className="mb-4 px-3 py-2 rounded-lg border border-brand-green/20 bg-brand-green/5 text-[11px] font-mono text-brand-green/80 leading-relaxed">
-              {project.demo}
-            </div>
-          )}
-
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto mx-auto inline-flex items-center gap-2 text-black bg-brand-green font-mono text-xs tracking-widest uppercase px-5 py-2.5 rounded-full hover:bg-brand-green/90 hover:gap-3 hover:scale-105 transition-all duration-200"
-          >
-            Open app
-            <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M2 7h10M8 3l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        </div>
-      </motion.div>
+  const id = project.slug === 'careerguide' ? 'career-guide' : project.slug === 'wspolnik-demo' ? 'wspolnik' : project.slug
+  const Tag = linked ? Motion.a : Motion.article
+  const linkProps = linked ? { href: project.url, target: '_blank', rel: 'noopener noreferrer', 'aria-labelledby': `${id}-title ${id}-link` } : { 'aria-labelledby': `${id}-title` }
+  return <Tag className={`glass-card project-card${linked ? '' : ' is-static'}`} id={id} {...linkProps} initial={reduced ? false : { opacity: 0, y: 12 }}
+    whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.06 }}
+    transition={{ duration: reduced ? 0 : 0.35, ease: 'easeOut' }}
+    style={{ rotateX: enabled ? rotateX : 0, rotateY: enabled ? rotateY : 0, transformPerspective: enabled ? 1000 : undefined }}
+    onPointerMove={move} onPointerLeave={reset}
+    onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) reset() }} onBlur={reset}>
+    <Motion.span className="project-reflection" aria-hidden="true" style={{ background: reflection, opacity: enabled ? reflectionOpacity : 0 }} />
+    <div className="project-illustration" aria-hidden="true">
+      {project.image && <img src={project.image} alt="" loading="lazy" />}
     </div>
-  )
+    <div className="project-content">
+      <h3 id={`${id}-title`}>{project.title}</h3>
+      <p className="project-role">{project.role || project.subtitle}</p>
+      {project.scope && <dl className="project-scope">{project.scope.map((entry) => <div key={entry.label}>
+        <dt>{entry.label}</dt><dd>{entry.value}</dd>
+      </div>)}</dl>}
+      <p className="project-description">{project.description}</p>
+      <ul className="project-stack">{project.tags.map((tag) => <li className="tag" key={tag}>{tag}</li>)}</ul>
+      {linked && project.demo && <p className="demo-note">{project.demo}</p>}
+      {linked && <span className="project-link" id={`${id}-link`}>{project.link_label || t('projects.open_app')}<span aria-hidden="true">{String.fromCharCode(8594)}</span></span>}
+    </div>
+  </Tag>
 }
