@@ -1,135 +1,305 @@
 {
   "nav": {
     "about": "O mnie",
-    "projects": "Projekty",
+    "projects": "Realizacje",
     "eda": "Analizy",
     "certificates": "Certyfikaty",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "experience": "Doświadczenie",
+    "skills": "Kompetencje"
   },
   "hero": {
     "greeting": "Cześć, jestem",
     "name": "Marcin Szczęsny",
-    "roles": ["Data Scientist", "AI Developer", "ML Engineer", "Tech Lead"],
-    "bio": [
-      "20+ lat w sprzedaży i budowaniu relacji biznesowych — łączę handlową intuicję z umiejętnością podejmowania decyzji opartych na analizie danych.",
-      "Od 2024 r. aktywnie rozwijam się w Data Science i AI. Członek elitarnej grupy Masterclass, gdzie współtworzę innowacyjne startupy z obszaru ML i sztucznej inteligencji.",
-      "Od VIII 2025 Tech Lead w Career Guide — odpowiadam za architekturę platformy, prowadzę Code Review i koordynuję pracę 5 zespołów (20+ osób)."
+    "roles": [
+      "COO i współzałożyciel Crait",
+      "Tech Lead Career Guide",
+      "AI Product Engineer"
     ],
-    "cta_projects": "Zobacz projekty",
-    "cta_contact": "Kontakt",
+    "bio": [
+      "Wdrażam AI od rozmowy z klientem do działającej produkcji. W Crait odpowiadam za wdrożenia, utrzymanie i organizację pracy 15-osobowego zespołu. Jako Tech Lead prowadzę architekturę i code review naszego produktu, Career Guide.",
+      "Zaprojektowałem cały system zarządzania pracą zespołu Crait, w którym ludzie pracują razem z agentami AI. Stale testuję nowe modele i narzędzia, a to, co się sprawdza, wprowadzam do codziennej pracy.",
+      "Wcześniej wiele lat pracowałem z klientami biznesowymi, więc zaczynam od problemu, a nie od technologii."
+    ],
+    "cta_projects": "Zobacz realizacje",
+    "cta_contact": "Napisz do mnie",
     "stats": [
-      { "value": "20+", "label": "lat w biznesie" },
-      { "value": "2+", "label": "lat w AI/ML/Data Science" },
-      { "value": "1+", "label": "systemy agentowe N8N" }
-    ]
+      {
+        "value": "2",
+        "label": "produkty w użyciu"
+      },
+      {
+        "value": "15",
+        "label": "osób w zespole Crait"
+      },
+      {
+        "value": "od 2024",
+        "label": "zawodowo w AI"
+      }
+    ],
+    "availability": "Otwarty na współpracę",
+    "intro": "Projektuję i wdrażam produkty AI. W Crait łączę pracę inżynierską z organizacją zespołu i prowadzeniem wdrożeń.",
+    "current": "Obecnie",
+    "crait_role": "COO i współzałożyciel",
+    "crait_description": "Wdrożenia, utrzymanie i system pracy 15-osobowego zespołu.",
+    "cg_description": "Architektura i code review produktu rozwijanego przez zespół Crait.",
+    "note": "Produkty, technologia i odpowiedzialność za wykonanie."
   },
   "skills": {
-    "title": "Umiejętności",
+    "title": "Kompetencje i technologie",
     "categories": [
-      { "name": "Języki", "items": ["Python", "SQL", "TypeScript", "JavaScript"] },
-      { "name": "Frameworks", "items": ["Streamlit", "React", "React Native", "FastAPI", "Expo"] },
-      { "name": "AI / ML", "items": ["OpenAI", "Ollama", "PyCaret", "Scikit-learn", "CatBoost", "Matplotlib", "Seaborn"] },
-      { "name": "Bazy danych", "items": ["PostgreSQL", "Supabase", "Qdrant", "Redis"] },
-      { "name": "Cloud & DevOps", "items": ["Docker", "Digital Ocean", "GCP", "AWS S3", "Vercel", "Supabase Storage"] },
-      { "name": "Narzędzia", "items": ["MCP", "GitHub", "Pandas", "NumPy", "Plotly", "Langfuse", "N8N"] },
-      { "name": "Leadership", "items": ["Zarządzanie zespołem", "Komunikacja techniczna", "Rozwiązywanie problemów", "Krytyczne myślenie", "Zarządzanie czasem", "Adaptacja technologiczna"] }
-    ]
+      {
+        "name": "Języki",
+        "items": [
+          "Python",
+          "SQL",
+          "TypeScript",
+          "JavaScript"
+        ]
+      },
+      {
+        "name": "Frameworks",
+        "items": [
+          "FastAPI",
+          "React",
+          "React Native",
+          "Expo",
+          "Streamlit",
+          "Tailwind"
+        ]
+      },
+      {
+        "name": "AI / ML",
+        "items": [
+          "OpenAI",
+          "Claude",
+          "Gemini",
+          "Ollama",
+          "RAG",
+          "Wyszukiwanie semantyczne",
+          "Ewaluacja LLM",
+          "PyCaret",
+          "Scikit-learn",
+          "CatBoost",
+          "Matplotlib",
+          "Seaborn"
+        ]
+      },
+      {
+        "name": "Bazy danych",
+        "items": [
+          "PostgreSQL",
+          "Supabase",
+          "Qdrant",
+          "Redis"
+        ]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "items": [
+          "Docker",
+          "Digital Ocean",
+          "GCP",
+          "AWS S3",
+          "Vercel",
+          "Supabase Storage"
+        ]
+      },
+      {
+        "name": "Narzędzia",
+        "items": [
+          "Claude Code",
+          "Codex",
+          "Orkiestracja agentów",
+          "MCP",
+          "N8N",
+          "Langfuse",
+          "GitHub",
+          "Pandas",
+          "NumPy",
+          "Plotly"
+        ]
+      },
+      {
+        "name": "Leadership",
+        "items": [
+          "Architektura systemów",
+          "Code Review",
+          "Projektowanie procesów zespołu",
+          "Prowadzenie wdrożeń",
+          "Zarządzanie zespołem",
+          "Komunikacja techniczna",
+          "Rozwiązywanie problemów",
+          "Krytyczne myślenie",
+          "Zarządzanie czasem",
+          "Adaptacja technologiczna"
+        ]
+      }
+    ],
+    "label": "Warsztat",
+    "intro": "Inżynieria oprogramowania, praca z modelami AI i prowadzenie zespołu."
   },
   "projects": {
-    "title": "Projekty",
-    "subtitle": "Aplikacje zbudowane z pasją do AI i danych",
+    "title": "Produkty w użyciu.",
+    "subtitle": "Dwa różne zastosowania: rozwój kariery i obsługa wspólnoty mieszkaniowej.",
     "items": [
       {
         "slug": "wspolnik-demo",
         "title": "Wspólnik",
         "subtitle": "Portal wspólnoty mieszkaniowej",
-        "description": "Aplikacja dla wspólnoty: strona publiczna z aktualnościami, panel mieszkańca (finanse, ogłoszenia, głosowania, dokumenty) oraz rozbudowany panel administratora (naliczenia, importy, uchwały). Automatyzacja generowania naliczeń oraz powiadomień — m.in. zawiadomienia PDF i e-mail, przypomnienia o głosowaniach. Pełna nawigacja w trybie demonstracyjnym z danymi mock.",
-        "demo": "Tryb demonstracyjny na potrzeby prezentacji: pełny interfejs z mockami — bez zapisu do prawdziwej bazy.",
-        "tags": ["React", "TypeScript", "Vite", "Tailwind", "Supabase", "FastAPI"],
+        "description": "System używany przez rzeczywistą wspólnotę mieszkaniową. Łączy panel mieszkańca i administratora: finanse, ogłoszenia, głosowania oraz dokumenty. Automatyzuje naliczenia, powiadomienia i przygotowanie zawiadomień.",
+        "demo": "Publiczne demo korzysta z przykładowych danych. Nie zapisuje zmian w bazie wspólnoty.",
+        "tags": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind",
+          "Supabase",
+          "FastAPI"
+        ],
         "url": "https://wspolnik-demo.vercel.app/",
         "image": "/images/wspolnik.png",
-        "color": "#6B8F71",
-        "size": "large"
+        "size": "large",
+        "category": "Automatyzacja / zarządzanie nieruchomością",
+        "cover_note": "Aplikacja dla wspólnoty mieszkaniowej",
+        "role": "Projektowanie i implementacja",
+        "headline": "Codzienne sprawy wspólnoty w jednym systemie.",
+        "scope": [
+          {
+            "label": "Rozwiązanie",
+            "value": "Panel mieszkańca i administratora, obsługa finansów i dokumentów."
+          },
+          {
+            "label": "Automatyzacja",
+            "value": "Naliczenia, zawiadomienia PDF, e-maile i przypomnienia o głosowaniach."
+          }
+        ],
+        "link_label": "Otwórz wersję demonstracyjną"
       },
       {
         "slug": "careerguide",
         "title": "Career Guide",
         "subtitle": "Platforma rozwoju kariery",
-        "description": "Platforma pomagająca użytkownikom w rozwoju kariery. Spersonalizowane testy osobowości i kompetencji, inteligentny system dopasowywania profilu zawodowego oraz kreator CV.",
-        "tags": ["FastAPI", "React", "TypeScript", "PostgreSQL", "Docker", "Supabase"],
+        "description": "Career Guide pomaga w rozwoju kariery: łączy profil zawodowy, testy kompetencji i kreator CV. Jako Tech Lead odpowiadam za architekturę i code review produktu tworzonego przez zespół Crait.",
+        "tags": [
+          "FastAPI",
+          "React",
+          "TypeScript",
+          "PostgreSQL",
+          "Docker",
+          "Supabase"
+        ],
         "url": "https://careerguide.pl",
         "image": "/images/careerguide.png",
-        "color": "#6366f1",
-        "size": "large"
+        "size": "large",
+        "category": "AI / rozwój kariery",
+        "cover_note": "Produkt zespołu Crait",
+        "role": "Tech Lead / Crait",
+        "headline": "Architektura i rozwój produktu zespołowego.",
+        "scope": [
+          {
+            "label": "Mój zakres",
+            "value": "Architektura systemu, code review, rozwój funkcji AI."
+          },
+          {
+            "label": "Produkt",
+            "value": "Działająca platforma rozwoju kariery."
+          }
+        ],
+        "link_label": "Przejdź do Career Guide"
       },
       {
         "slug": "polmaraton",
         "title": "Półmaraton",
         "subtitle": "Predykcja czasu ML",
-        "description": "Interaktywna aplikacja przewidująca czas półmaratonu. GPT-4o-mini rozpoznaje dane biegacza, model ML trenowany na 20 000+ uczestnikach z Wrocławia.",
-        "demo": "CatBoost Regressor przewiduje czas półmaratonu w sekundach na podstawie cech: wiek, płeć, czas na 5 km.",
-        "tags": ["CatBoost", "PyCaret", "OpenAI", "Langfuse", "Docker"],
-        "url": "https://polmaraton.streamlit.app/",
+        "description": "Aplikacja szacuje czas ukończenia półmaratonu. Model językowy odczytuje dane biegacza z opisu w wolnym tekście, a model regresyjny wytrenowany na wynikach ponad 20 000 uczestników biegu we Wrocławiu podaje prognozę.",
+        "tags": [
+          "CatBoost",
+          "PyCaret",
+          "OpenAI",
+          "Langfuse",
+          "Docker"
+        ],
         "image": "/images/maraton.png",
-        "color": "#3b82f6",
         "size": "medium"
       },
       {
         "slug": "audionotatki",
         "title": "Audionotatki",
-        "subtitle": "Voice notes + AI search",
-        "description": "Nagrywanie notatek głosowych z automatyczną transkrypcją (Whisper). Semantyczne wyszukiwanie przez wektorową bazę Qdrant. Wielojęzyczna.",
-        "demo": "Login: test / Hasło: test — w bazie znajdziesz przykładowe notatki z przepisami kulinarnymi.",
-        "tags": ["Whisper", "Qdrant", "Embeddings", "Streamlit"],
-        "url": "https://nagraj.streamlit.app/",
+        "subtitle": "Notatki głosowe i wyszukiwanie AI",
+        "description": "Aplikacja nagrywa notatki głosowe, zamienia je na tekst i pozwala wyszukiwać po znaczeniu, a nie po słowach kluczowych, dzięki embeddingom w bazie wektorowej. Obsługuje kilka języków.",
+        "tags": [
+          "Whisper",
+          "Qdrant",
+          "Embeddings",
+          "Streamlit"
+        ],
         "image": "/images/audioPL.png",
-        "color": "#8b5cf6",
         "size": "medium"
       },
       {
         "slug": "piktobajki",
         "title": "PiktoBajki",
         "subtitle": "Obrazkowe opowiadania AI",
-        "description": "Aplikacja do generowania interaktywnych historii obrazkowych. GPT-4o dla tekstu, DALL·E 3 dla obrazów, TTS dla głosu. System subskrypcji i zarządzanie zasobami użytkownika.",
-        "tags": ["Python", "Streamlit", "GPT-4o", "DALL·E 3", "Supabase"],
-        "url": "https://piktobajki.streamlit.app/",
+        "description": "Aplikacja tworzy ilustrowane bajki: model językowy pisze tekst, model graficzny generuje obrazy, a synteza mowy dodaje lektora. Ma konta użytkowników i limity w modelu subskrypcji.",
+        "tags": [
+          "Python",
+          "Streamlit",
+          "GPT-4o",
+          "DALL·E 3",
+          "Supabase"
+        ],
         "image": "/images/piktobajkiAI.png",
-        "color": "#ff6b35",
         "size": "large"
       },
       {
         "slug": "friends",
         "title": "Find Friends",
         "subtitle": "EDA + Clustering",
-        "description": "Narzędzie EDA do znajdowania osób o podobnych zainteresowaniach. Clustering PyCaret identyfikuje grupy użytkowników na podstawie ankiety.",
-        "tags": ["PyCaret", "Plotly", "Clustering", "Pandas"],
-        "url": "https://friendsappfind.streamlit.app/",
+        "description": "Analiza ankiety i grupowanie uczestników o podobnych zainteresowaniach metodą klasteryzacji.",
+        "tags": [
+          "PyCaret",
+          "Plotly",
+          "Clustering",
+          "Pandas"
+        ],
         "image": "/images/logo.png",
-        "color": "#10b981",
         "size": "small"
       },
       {
         "slug": "zestawienia",
         "title": "Zestawienia",
         "subtitle": "Analiza sprzedaży",
-        "description": "Aplikacja do analizy sprzedaży z interaktywnymi wykresami Plotly. Parsuje niestandardowe pliki raportów, porównuje okresy, wizualizuje zmiany.",
-        "tags": ["Pandas", "NumPy", "Plotly", "Supabase"],
-        "url": "https://zestawienia.streamlit.app/",
+        "description": "Aplikacja do analizy sprzedaży: wczytuje niestandardowe raporty, porównuje okresy i pokazuje zmiany na wykresach.",
+        "tags": [
+          "Pandas",
+          "NumPy",
+          "Plotly",
+          "Supabase"
+        ],
         "image": "/images/zest.png",
-        "color": "#f59e0b",
         "size": "small"
       }
-    ]
+    ],
+    "label": "Wybrane realizacje",
+    "product": "Produkt",
+    "live": "Na produkcji",
+    "open_app": "Otwórz aplikację"
   },
   "eda": {
-    "title": "Analizy EDA",
-    "subtitle": "Eksploracja danych w Jupyter",
+    "title": "Notebooki i analizy danych",
+    "subtitle": "Wcześniejsze analizy eksploracyjne. Podgląd kodu, wykresów i wyników lub pobranie pliku Jupyter.",
     "items": [
       {
         "slug": "iris",
         "title": "Iris Dataset",
         "description": "Klasyczna analiza zbioru Iris — wizualizacje, statystyki opisowe, klasyfikacja.",
-        "tags": ["Jupyter", "Pandas", "Plotly", "Scikit-learn"],
+        "tags": [
+          "Jupyter",
+          "Pandas",
+          "Plotly",
+          "Scikit-learn"
+        ],
         "notebook_url": "/iris/iris.ipynb",
         "image": "/images/irysy.png"
       },
@@ -137,14 +307,19 @@
         "slug": "titanic",
         "title": "Titanic Survival",
         "description": "Analiza przeżywalności pasażerów Titanica. EDA, feature engineering, modele ML.",
-        "tags": ["Jupyter", "Pandas", "CatBoost", "Plotly"],
+        "tags": [
+          "Jupyter",
+          "Pandas",
+          "CatBoost",
+          "Plotly"
+        ],
         "notebook_url": "/titanic/titanic.ipynb",
         "image": "/images/titanic.png"
       }
     ]
   },
   "certificates": {
-    "title": "CERTYFIKATY",
+    "title": "Szkolenia i certyfikaty.",
     "subtitle": "Ukończone szkolenia i kursy",
     "open": "Otwórz",
     "download": "Pobierz",
@@ -157,7 +332,13 @@
         "date": "2026-05-11",
         "date_display": "Maj 2026",
         "description": "Zaawansowany, kilkumiesięczny program rozwojowy. Nauczyłem się tworzyć i prowadzić zaawansowane projekty oraz produkty oparte o AI — od koncepcji, przez architekturę, po wdrożenie.",
-        "tags": ["AI Foundations", "Advanced AI", "Product Development", "Project Leadership", "Masterclass"],
+        "tags": [
+          "AI Foundations",
+          "Advanced AI",
+          "Product Development",
+          "Project Leadership",
+          "Masterclass"
+        ],
         "pdf_url": "/certificates/masterclass.pdf",
         "verify_url": "https://app.imprv.ai/verify/vrf_IRO03ZmHvrb"
       },
@@ -167,7 +348,11 @@
         "issuer": "imprv.ai",
         "date": "2026-05-07",
         "date_display": "Maj 2026",
-        "tags": ["Product", "UX", "AI Design"],
+        "tags": [
+          "Product",
+          "UX",
+          "AI Design"
+        ],
         "pdf_url": "/certificates/tworzenie_i_projektowanie_AI.pdf",
         "verify_url": "https://app.imprv.ai/verify/vrf_sqFMIQs2P1q"
       },
@@ -177,7 +362,11 @@
         "issuer": "imprv.ai",
         "date": "2026-03-22",
         "date_display": "Marzec 2026",
-        "tags": ["AI Strategy", "Leadership", "Business"],
+        "tags": [
+          "AI Strategy",
+          "Leadership",
+          "Business"
+        ],
         "pdf_url": "/certificates/AI_dla_CEO.pdf",
         "verify_url": "https://app.imprv.ai/verify/vrf_ue5thrjd81D"
       },
@@ -187,28 +376,133 @@
         "issuer": "gotoit.pl",
         "date": "2025-08-25",
         "date_display": "Sierpień 2025",
-        "tags": ["Python", "Pandas", "Scikit-learn", "ML", "Data Science"],
+        "tags": [
+          "Python",
+          "Pandas",
+          "Scikit-learn",
+          "ML",
+          "Data Science"
+        ],
         "pdf_url": "/certificates/data-scientist.pdf"
       }
-    ]
+    ],
+    "label": "Rozwój"
   },
   "contact": {
     "title": "Kontakt",
     "subtitle": "Porozmawiajmy o projekcie",
-    "availability": "Aktywnie szukam:",
+    "availability": "Jestem otwarty na współpracę:",
     "availability_items": [
-      "Pracy stałej w obszarze Data Science / AI",
-      "Projektów freelance ML / AI",
-      "Współpracy przy innowacyjnych rozwiązaniach"
+      "Wdrożenia AI i automatyzacja procesów",
+      "Projektowanie i rozwój produktów",
+      "Organizacja pracy zespołu z agentami AI"
     ],
     "email": "heya@wp.pl",
     "github": "https://github.com/heyagotoai",
     "linkedin": "https://www.linkedin.com/in/marcin-szczesny-ai/",
-    "cta": "Napisz do mnie"
+    "cta": "Napisz do mnie",
+    "heading_first": "Porozmawiajmy",
+    "heading_last": "o Twoim projekcie.",
+    "intro": "Możemy zacząć od problemu, który chcesz rozwiązać, i ustalić zakres pierwszego kroku.",
+    "confidential": "Portfolio przedstawia wybrane prace. Część projektów pozostaje niepubliczna ze względu na poufność."
   },
   "footer": {
     "built_with": "Zbudowane z",
     "and": "i",
     "rights": "Marcin Szczęsny. Wszelkie prawa zastrzeżone."
+  },
+  "meta": {
+    "title": "Marcin Szczęsny — AI Product Engineer · Crait",
+    "description": "COO i współzałożyciel Crait. Tech Lead Career Guide. Produkty AI, automatyzacja procesów i organizacja pracy zespołu."
+  },
+  "ui": {
+    "skip": "Przejdź do treści",
+    "home": "Marcin Szczęsny — początek strony",
+    "navigation": "Nawigacja główna",
+    "language": "Język strony",
+    "menu": "Menu",
+    "close": "Zamknij",
+    "preview": "Podgląd",
+    "download": "Pobierz",
+    "back_top": "Na początek",
+    "loading": "Wczytywanie notebooka…",
+    "load_error": "Nie udało się wczytać notebooka. Możesz pobrać plik.",
+    "open_file": "Otwórz plik",
+    "pdf_fallback": "Jeśli podgląd nie jest dostępny w Twojej przeglądarce, otwórz lub pobierz PDF."
+  },
+  "experience": {
+    "label": "Doświadczenie",
+    "title": "Technologia i praca zespołu.",
+    "intro": "W Crait odpowiadam za organizację pracy, wdrożenia i utrzymanie. W Career Guide prowadzę architekturę i przegląd kodu.",
+    "statement": "Zaprojektowałem system pracy zespołu Crait.",
+    "background": "Wcześniejsza praca z klientami biznesowymi pomaga mi ustalić, co system ma rozwiązać, zanim wybiorę technologię.",
+    "crait_link": "Poznaj Crait",
+    "practices": [
+      {
+        "title": "Organizacja pracy",
+        "description": "Planowanie i przydział zadań, dokumentacja, przegląd kodu oraz zasady współpracy ludzi z agentami AI."
+      },
+      {
+        "title": "Prowadzenie wdrożeń",
+        "description": "Od rozpoznania problemu i pilotażu po wdrożenie oraz utrzymanie działającego systemu."
+      },
+      {
+        "title": "Praca z agentami AI",
+        "description": "Korzystam z wielu modeli do implementacji i wzajemnego sprawdzania zmian. Weryfikuję wynik i odpowiadam za decyzje techniczne."
+      },
+      {
+        "title": "Eksperymenty w praktyce",
+        "description": "Testuję nowe modele i narzędzia we własnych projektach. Sprawdzone rozwiązania wprowadzam do codziennej pracy zespołu."
+      }
+    ]
+  },
+  "earlier": {
+    "label": "Wcześniejsze prace",
+    "title": "Projekty i eksperymenty.",
+    "intro": "Mniejsze aplikacje, w których pracowałem z uczeniem maszynowym, wyszukiwaniem semantycznym i generowaniem treści."
+  },
+  "solutions": {
+    "title": "Wybrane rozwiązania.",
+    "intro": "Problem, rozwiązanie i dobór technologii.",
+    "problem": "Problem",
+    "approach": "Rozwiązanie",
+    "technology": "Technologie",
+    "items": [
+      {
+        "name": "RagAIn",
+        "subtitle": "Głosowa kartoteka klienta",
+        "problem": "Ustalenia z wizyt handlowych łatwo rozpraszają się między notatkami. Przed kolejną rozmową trzeba odtworzyć historię klienta.",
+        "approach": "Nagranie po wizycie staje się transkrypcją i propozycją zmian w kartotece. Model zwraca dane zgodne z JSON Schema, a użytkownik zatwierdza je przed zapisem. Historia ustaleń i wyszukiwanie hybrydowe służą do przygotowania briefingu.",
+        "technology": "React, Cloudflare Workers, OpenAI, Supabase / PostgreSQL (pgvector), embeddingi, wyszukiwanie hybrydowe."
+      },
+      {
+        "name": "Sygnoza",
+        "subtitle": "Radar okazji sprzedażowych",
+        "problem": "Ogłoszenia o zakupach są rozproszone między BZP i stronami instytucji. Handlowiec potrzebuje wybrać te, które pasują do jego asortymentu i obszaru działania.",
+        "approach": "Import ogłoszeń i skanowanie wybranych stron, usuwanie duplikatów oraz filtrowanie po regionie i rodzaju dostawy. Karty okazji zbierają warunki i prowadzą do dokumentów źródłowych.",
+        "technology": "Python, FastAPI, SQLAlchemy, PostgreSQL / SQLite, BeautifulSoup, odczyt PDF i arkuszy, Docker."
+      },
+      {
+        "name": "Neuralogistics",
+        "subtitle": "Planowanie tras i załadunków",
+        "problem": "Planowanie dostaw wymaga pogodzenia zamówień, dostępnych pojazdów, przebiegu dróg i kosztów transportu.",
+        "approach": "Wspólna obsługa zamówień i floty, przydzielanie dostaw oraz optymalizacja tras. Algorytmy VRP i klastrowanie współpracują z routingiem OSRM opartym na sieci drogowej.",
+        "technology": "React, TypeScript, Node.js / Express, PostgreSQL / PostGIS, Redis, OSRM, Docker."
+      },
+      {
+        "name": "TC421",
+        "subtitle": "Lokalne sterowanie oświetleniem",
+        "problem": "Programowanie harmonogramów sterownika LED powinno być dostępne z telefonu, z możliwością zachowania i przywrócenia ustawień.",
+        "approach": "Aplikacja Android i interfejs komputerowy do edycji scen i harmonogramów. Komunikacja ze sterownikiem odbywa się lokalnie przez UDP; konfiguracje można zapisywać, importować i eksportować.",
+        "technology": "Kotlin / Android WebView, JavaScript, UDP, Python."
+      },
+      {
+        "name": "Oferta",
+        "subtitle": "Oferty handlowe i materiały sprzedażowe",
+        "problem": "Cenniki, indywidualne rabaty, oferty i gazetki muszą korzystać ze spójnych danych, mimo zmian asortymentu i cen.",
+        "approach": "Import cennika, ceny indywidualne, eksport PDF / Excel i składanie gazetek do druku. Zatwierdzona kampania zachowuje własny zestaw danych, więc późniejsze zmiany cennika nie zmieniają jej treści.",
+        "technology": "Next.js, React, TypeScript, Drizzle, Neon PostgreSQL, Cloudflare R2; Python, Jinja2, WeasyPrint, Docker."
+      }
+    ]
   }
 }

@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react'
+import { createElement, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import CursorBackground from './CursorBackground'
 
 const NAV_ITEMS = [
-  { key: 'about', href: '#about', icon: UserIcon },
-  { key: 'projects', href: '#projects', icon: GridIcon },
-  { key: 'eda', href: '#eda', icon: ChartIcon },
-  { key: 'certificates', href: '#certificates', icon: MedalIcon },
-  { key: 'contact', href: '#contact', icon: MailIcon },
+  { key: 'about', icon: UserIcon },
+  { key: 'projects', icon: GridIcon },
+  { key: 'experience', icon: ChartIcon },
+  { key: 'skills', icon: CodeIcon },
+  { key: 'certificates', icon: MedalIcon },
+  { key: 'contact', icon: MailIcon },
 ]
 
 function UserIcon() {
@@ -27,6 +28,11 @@ function GridIcon() {
       <rect x="14" y="14" width="7" height="7" rx="1" />
     </svg>
   )
+}
+function CodeIcon() {
+  return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m8 6-6 6 6 6m8-12 6 6-6 6M14 3l-4 18" />
+  </svg>
 }
 function ChartIcon() {
   return (
@@ -55,135 +61,82 @@ function MailIcon() {
 
 export default function Layout({ children }) {
   const { t, i18n } = useTranslation()
+  const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('about')
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const language = i18n.resolvedLanguage === 'en' ? 'en' : 'pl'
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['about', 'projects', 'eda', 'certificates', 'contact']
-      for (const id of sections.reverse()) {
-        const el = document.getElementById(id)
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive(id)
-          break
-        }
-      }
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    document.documentElement.lang = language
+    document.title = t('meta.title')
+    for (const [selector, value] of [
+      ['meta[name="description"]', t('meta.description')],
+      ['meta[property="og:title"]', t('meta.title')],
+      ['meta[property="og:description"]', t('meta.description')],
+      ['meta[property="og:locale"]', language === 'pl' ? 'pl_PL' : 'en_US'],
+      ['meta[name="twitter:title"]', t('meta.title')],
+      ['meta[name="twitter:description"]', t('meta.description')],
+    ]) document.querySelector(selector)?.setAttribute('content', value)
+  }, [language, t])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting)
+      if (visible.length) setActive(visible[0].target.id)
+    }, { rootMargin: '-15% 0px -65% 0px' })
+    NAV_ITEMS.forEach(({ key }) => {
+      const element = document.getElementById(key)
+      if (element) observer.observe(element)
+    })
+    return () => observer.disconnect()
   }, [])
 
-  const toggleLang = () => {
-    i18n.changeLanguage(i18n.language === 'pl' ? 'en' : 'pl')
-  }
+  useEffect(() => {
+    if (!menuOpen) return
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        document.getElementById('menu-toggle')?.focus()
+      }
+    }
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [menuOpen])
 
-  return (
-    <div className="flex min-h-screen">
-      <CursorBackground />
-      {/* Sidebar */}
-      <aside className="hidden lg:flex w-64 flex-shrink-0 flex-col fixed top-0 left-0 h-full z-50 border-r border-white/5 bg-black/40 backdrop-blur-sm">
-        {/* Logo */}
-        <div className="p-8 pb-0">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="w-10 h-10 rounded-full border border-brand-green/40 flex items-center justify-center text-brand-green font-mono font-bold text-lg green-glow">
-              MS
-            </div>
-            <div>
-              <p className="text-white font-semibold text-sm leading-tight">Marcin Szczęsny</p>
-              <p className="text-brand-gray text-[10px] font-mono tracking-widest">DATA / AI</p>
-            </div>
-          </div>
-        </div>
+  const brand = <a className="wordmark" href="#about" onClick={() => setMenuOpen(false)} aria-label={t('ui.home')}>
+    <span className="monogram" aria-hidden="true">MS</span>
+    <span className="brand-name">{t('hero.name')}<span className="brand-caption">DATA / AI</span></span>
+  </a>
+  const languages = <div className="language-switch" role="group" aria-label={t('ui.language')}>
+    {['pl', 'en'].map((lng) => <button key={lng} type="button" lang={lng}
+      aria-pressed={language === lng} onClick={() => i18n.changeLanguage(lng)}>{lng.toUpperCase()}</button>)}
+  </div>
+  const links = NAV_ITEMS.map(({ key, icon }) => <a key={key} href={`#${key}`}
+    className={`nav-link${active === key ? ' active' : ''}`} aria-current={active === key ? 'location' : undefined}
+    onClick={() => { setActive(key); setMenuOpen(false) }}>
+    <span aria-hidden="true">{createElement(icon)}</span>{t(`nav.${key}`)}
+  </a>)
 
-        {/* Nav */}
-        <nav className="flex-1 px-8 py-10 relative">
-          {/* Vertical line */}
-          <div className="absolute left-[38px] top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent" />
-
-          <ul className="space-y-6">
-            {NAV_ITEMS.map(({ key, href, icon: Icon }) => (
-              <li key={key}>
-                <a
-                  href={href}
-                  onClick={() => setActive(key)}
-                  className={`nav-link flex items-center gap-4 group ${active === key ? 'active' : ''}`}
-                >
-                  <span className={`flex-shrink-0 transition-colors duration-200 ${active === key ? 'text-brand-green' : 'text-white/30 group-hover:text-white/60'}`}>
-                    <Icon />
-                  </span>
-                  <span>{t(`nav.${key}`)}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10">
-            <button
-              onClick={toggleLang}
-              className="font-mono text-sm tracking-widest text-white/60 hover:text-brand-green transition-colors duration-200 border border-white/15 hover:border-brand-green/40 rounded px-5 py-2"
-            >
-              {i18n.language === 'pl' ? 'EN' : 'PL'}
-            </button>
-          </div>
-        </nav>
-      </aside>
-
-      {/* Mobile header */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/80 backdrop-blur-sm border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full border border-brand-green/40 flex items-center justify-center text-brand-green font-mono font-bold text-sm">
-            MS
-          </div>
-          <span className="text-white font-semibold text-sm">Marcin Szczęsny</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <button
-            onClick={toggleLang}
-            className="font-mono text-[11px] tracking-widest text-brand-gray hover:text-brand-green transition-colors border border-white/10 hover:border-brand-green/40 rounded px-2 py-1"
-          >
-            {i18n.language === 'pl' ? 'EN' : 'PL'}
-          </button>
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="text-white/60 hover:text-white transition-colors"
-          >
-            <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5">
-              {mobileOpen ? (
-                <path d="M6 6l12 12M18 6l-12 12" strokeLinecap="round" />
-              ) : (
-                <path d="M3 7h18M3 12h18M3 17h18" strokeLinecap="round" />
-              )}
-            </svg>
-          </button>
-        </div>
+  return <div className="site-layout">
+    <CursorBackground />
+    <a className="skip-link" href="#main">{t('ui.skip')}</a>
+    <aside className="desktop-sidebar">
+      {brand}
+      <nav className="sidebar-navigation" aria-label={t('ui.navigation')}>{links}</nav>
+      {languages}
+    </aside>
+    <header className="mobile-header">
+      {brand}
+      <div className="header-actions">{languages}
+        <button id="menu-toggle" className="menu-toggle" type="button" aria-expanded={menuOpen}
+          aria-controls="main-navigation" aria-label={menuOpen ? t('ui.close') : t('ui.menu')}
+          onClick={() => setMenuOpen(!menuOpen)}>
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <path d={menuOpen ? 'M5 5l12 12M17 5L5 17' : 'M3 6h16M3 11h16M3 16h16'} strokeLinecap="round" />
+          </svg>
+        </button>
       </div>
-
-      {/* Mobile nav dropdown */}
-      {mobileOpen && (
-        <div className="lg:hidden fixed top-[60px] left-0 right-0 z-40 bg-black/95 backdrop-blur-sm border-b border-white/5">
-          <ul className="px-6 py-4 space-y-3">
-            {NAV_ITEMS.map(({ key, href, icon: Icon }) => (
-              <li key={key}>
-                <a
-                  href={href}
-                  onClick={() => { setActive(key); setMobileOpen(false) }}
-                  className={`nav-link flex items-center gap-3 py-2 ${active === key ? 'active' : ''}`}
-                >
-                  <span className={active === key ? 'text-brand-green' : 'text-white/30'}>
-                    <Icon />
-                  </span>
-                  {t(`nav.${key}`)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {/* Main content */}
-      <main className="flex-1 lg:ml-64">
-        {children}
-      </main>
-    </div>
-  )
+    </header>
+    <nav id="main-navigation" className={`mobile-navigation${menuOpen ? ' is-open' : ''}`} aria-label={t('ui.navigation')} hidden={!menuOpen}>{links}</nav>
+    <main id="main" tabIndex={-1}>{children}</main>
+  </div>
 }
